@@ -52,6 +52,45 @@ Now that you have successfully run the app, let's modify it.
 
    For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
 
+
+## Step 4: Install Dependencies for Detox
+
+Before running the tests, please follow the environment setup guide for [Detox](https://wix.github.io/Detox/docs/next/introduction/environment-setup) and make sure you have the necessary dependencies installed.
+
+Usually, you will need to install the following:
+
+Install `applesimutils`:
+```bash
+brew tap wix/brew
+brew install applesimutils
+```
+
+Install `detox-cli`:
+```bash
+npm install -g detox-cli
+```
+
+## Step 5: Run Detox Tests
+
+### 5.1. Build the app for Detox
+
+```bash
+detox build -c ios.sim.release
+```
+
+### 5.2. Modify the tests
+
+The app's tests are under `e2e` directory. You can modify the tests to match your app's behavior.
+Open `e2e/starter.test.js` in your text editor of choice and edit some lines.
+
+### 5.3. Run the tests
+
+Run the following command to run the tests:
+
+```bash
+detox test -c ios.sim.release
+```
+
 ## Congratulations! :tada:
 
 You've successfully run and modified your React Native App. :partying_face:
